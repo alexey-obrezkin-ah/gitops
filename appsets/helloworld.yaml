@@ -19,8 +19,8 @@ spec:
         - repoURL: https://github.com/alexey-obrezkin-ah/gitops
           targetRevision: main
           ref: values
-        - chart: charts/helloworld
-          repoURL: https://alexey-obrezkin-ah.github.io
+        - chart: helloworld
+          repoURL: https://alexey-obrezkin-ah.github.io/charts
           targetRevision: 0.1.0
           helm:
             releaseName: helloworld-{{nameOverride}}
