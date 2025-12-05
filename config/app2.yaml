@@ -1,0 +1,7 @@
+nameOverride: app2
+livenessProbe:
+  enabled: true
+  # HTTP probe example (default)
+  httpGet:
+    path: /somepage
+    port: http

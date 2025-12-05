@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: helloworld
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/alexey-obrezkin-ah/gitops.git
+        revision: HEAD
+        files:
+          - path: "config/*.yaml"
+  template:
+    metadata:
+      name: 'helloworld-{{nameOverride}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://alexey-obrezkin-ah.github.io/charts.git
+        targetRevision: HEAD
+        chart: helloworld
+        helm:
+          values: |
+{{path.basenameNormalized}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: 'helloworld-{{nameOverride}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

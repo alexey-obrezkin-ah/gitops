@@ -1,0 +1,4 @@
+nameOverride: app1
+resources:
+  cpu: 1m
+  memory: 1Mi
