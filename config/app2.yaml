@@ -1,9 +1,6 @@
 nameOverride: app2
-# Use a valid nginx tag and fix liveness probe path to avoid 404 restarts
-image:
-  tag: "1.27.2"
 livenessProbe:
   enabled: true
   httpGet:
-    path: /
+    path: /hello
     port: http
