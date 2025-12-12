@@ -1,5 +1,8 @@
 nameOverride: app1
+image:
+  tag: "1.27.2"
+# Define sane resource requests (optional)
 resources:
   requests:
     cpu: 1m
-    memory: 1Mi
+    memory: 16Mi

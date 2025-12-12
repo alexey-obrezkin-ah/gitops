@@ -1,6 +1,10 @@
 nameOverride: app2
+# Use a valid nginx tag
+image:
+  tag: "1.27.2"
+# Use default liveness path which returns 200 on nginx
 livenessProbe:
   enabled: true
   httpGet:
-    path: /hello
+    path: /
     port: http
