@@ -1,4 +1,8 @@
 nameOverride: app2
+# Use a valid nginx tag
+image:
+  tag: "1.27.2"
+# Keep custom liveness probe path, chart default readiness remains /
 livenessProbe:
   enabled: true
   httpGet:
