@@ -4,5 +4,5 @@ image:
 livenessProbe:
   enabled: true
   httpGet:
-    path: /hello
+    path: /
     port: http
