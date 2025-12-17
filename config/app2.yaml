@@ -1,4 +1,6 @@
 nameOverride: app2
+image:
+  tag: "1.27.2"
 livenessProbe:
   enabled: true
   httpGet:
