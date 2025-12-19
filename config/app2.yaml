@@ -1,6 +1,8 @@
 nameOverride: app2
+image:
+  tag: "1.27.3"
 livenessProbe:
   enabled: true
   httpGet:
-    path: /hello
+    path: /
     port: http
